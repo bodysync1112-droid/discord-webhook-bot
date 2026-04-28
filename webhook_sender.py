@@ -13,12 +13,11 @@ def send_promotion():
         return
 
     # 1. 트래픽 분산 스파이크 제어 (Random Jitter)
-    # 정각에 몰리는 트래픽을 방지하기 위해 0초에서 120초(2분) 사이의 무작위 대기 시간 부여
     jitter = random.uniform(0, 120)
     print(f"네트워크 스파이크 방지: {jitter:.2f}초 대기 후 발송을 시작합니다...")
     time.sleep(jitter)
 
-    # 2. 임베드 메시지 최적화 (6,000자 제한 준수 및 시각적 브랜딩)
+    # 2. 임베드 메시지 최적화 (707TEAM 클랜 홍보 - 다중 이미지 적용 완료)
     payload = {
         "content": "", 
         "embeds": [
@@ -50,14 +49,12 @@ def send_promotion():
                     "url": "https://cdn.discordapp.com/attachments/1422956502020522054/1470081769050210531/707-_01.png?ex=69f17d96&is=69f02c16&hm=3012c1fe4083b850427693cddce3b5066748e077f4beeb76c2275c73cf0b64c6&"
                 }
             },
-            # 두 번째 이미지 객체
             {
                 "color": 0xF1A60A,
                 "image": {
                     "url": "https://cdn.discordapp.com/attachments/1422956502020522054/1470081784036196627/707-_02.png?ex=69f17d9a&is=69f02c1a&hm=51f12584cfc789ea7991273fa23b535c2958fa48996a63a810c67efac205c78c&"
                 }
             },
-            # 세 번째 이미지 객체
             {
                 "color": 0xF1A60A,
                 "image": {
@@ -65,14 +62,8 @@ def send_promotion():
                 }
             }
         ],
-        # 3. AutoMod 및 멘션 스팸 필터링 회피 메커니즘
         "allowed_mentions": {
             "parse": []
-        }
-    },
-        # 3. AutoMod 및 멘션 스팸 필터링 회피 메커니즘
-        "allowed_mentions": {
-            "parse": [] # 어떠한 멘션(@everyone 등)도 실제 푸시 알림으로 트리거되지 않도록 강제 차단
         }
     }
 
@@ -83,7 +74,6 @@ def send_promotion():
         if response.status_code in [200, 204]:
             print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 웹훅 발송 성공")
         elif response.status_code == 429:
-            # 429 에러 발생 시 헤더의 Retry-After 파싱
             retry_after = response.json().get('retry_after', 5)
             print(f"Rate Limit 도달. {retry_after}초 후 재시도가 필요합니다.")
         else:
