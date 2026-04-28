@@ -20,7 +20,8 @@ def send_promotion():
     # 2. 이미지의 내용을 그대로 구현한 본문 텍스트 (마크다운 및 이모지 적용)
     clan_message = """🎮 [707TEAM디코](https://discord.gg/yXKjPdHx)
 💬 [707TEAM문의방](https://open.kakao.com/o/gXiK1Edi)
-    # 👑707TEAM 클랜 모집합니다~
+
+# 👑707TEAM 클랜 모집합니다~
 
 **정이 많은 클랜 이라 어떤 클랜들 보다 쉽게 어울릴수 있는 장점입니다.**
 
@@ -59,9 +60,11 @@ def send_promotion():
 
 🎮 [707TEAM디코](https://discord.gg/yXKjPdHx)
 💬 [707TEAM문의방](https://open.kakao.com/o/gXiK1Edi)
+
 클랜 👑707TEAM 클랜에서
 게임을 잘하든 못하든 소중한 인연
 함께 만들어 가실 분들 많이 모집합니다.
+
 https://cdn.discordapp.com/attachments/1422956502020522054/1470081769050210531/707-_01.png?ex=69f17d96&is=69f02c16&hm=3012c1fe4083b850427693cddce3b5066748e077f4beeb76c2275c73cf0b64c6&
 https://cdn.discordapp.com/attachments/1422956502020522054/1470081784036196627/707-_02.png?ex=69f17d9a&is=69f02c1a&hm=51f12584cfc789ea7991273fa23b535c2958fa48996a63a810c67efac205c78c&
 https://cdn.discordapp.com/attachments/1422956502020522054/1470081799223902328/707-_03.png?ex=69f17d9d&is=69f02c1d&hm=228f65c88baafb27df6806db9fe3747061ef0d5f3fc7c9f770513cb27e8ca81c&
