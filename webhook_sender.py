@@ -20,29 +20,56 @@ def send_promotion():
 
     # 2. 임베드 메시지 최적화 (6,000자 제한 준수 및 시각적 브랜딩)
     payload = {
-        "content": "", # 텍스트 본문은 비우고 임베드에 집중
+        "content": "", 
         "embeds": [
             {
-                "title": "DANBAM 사전 수요 알림 및 메가 이벤트",
-                "description": "BCG 생체 신호 기반 실시간 능동 제어 시스템, 2세대 로보틱스 베개를 가장 먼저 만나보세요.\n\n확보된 특별 트래픽 한정 혜택은 [자사몰 공식 페이지](https://example.com)에서 확인하실 수 있습니다.",
-                "color": 0x2B2D31,  # 다크 테마에 어울리는 세련된 헥스 컬러
+                "title": "👑 707TEAM 클랜 신규 멤버 대모집 (카카오 배틀그라운드)",
+                "description": "클랜 👑707TEAM 클랜에서 게임을 잘하든 못하든 소중한 인연 함께 만들어 가실 분들 많이 모집합니다. 707TEAM 클랜 모집합니다~\n\n정이 많은 클랜이라 어떤 클랜들 보다 쉽게 어울릴 수 있는 장점입니다. (현재 서버부스트는 3렙 🚀)\n\n📌 **[707TEAM 디스코드 가입신청 및 문의방 참여](https://discord.gg/yXKjPdHx)**\n💬 **[카카오톡 오픈채팅 가입문의](https://open.kakao.com/o/gXiK1Edi)**\n\n다같이 매너 게임합시다! 가입은 위 링크를 통해 디스코드나 카톡 문의방으로 와주세요~",
+                "color": 0xF1A60A,
                 "fields": [
                     {
-                        "name": "🚀 다가오는 일정",
-                        "value": "2026년 10월 크라우드 펀딩 오픈 예정",
-                        "inline": True
+                        "name": "📝 클랜 기본 안내",
+                        "value": "• **클랜명** : 707TEAM\n• **게임** : 카배 (배틀그라운드)\n• **활동** : 일반 / 경쟁 / 친목\n• **접속시간** : 오후~ 새벽(오전) 평일 평균 3~5방 돌아감",
+                        "inline": False
                     },
                     {
-                        "name": "💡 핵심 가치",
-                        "value": "수면을 중시하는 세노이 부족의 철학을 담은 설계",
-                        "inline": True
+                        "name": "⭕ 모집조건",
+                        "value": "• 클랜에서 함께 배우며 성장하고 싶으신 분\n• 게임은 맛있게 수다는 즐겁게 하실 분 (치지)\n• 랜쿼드 플레이에 지치고 팀플레이를 원하시는 분\n• 배린이라 게임하기 힘들어 배우고 싶으신 분\n\n*※ 닉네임 & 클랜마크 변경 필수 (탈퇴 혹은 추방 시 재가입 불가)*",
+                        "inline": False
+                    },
+                    {
+                        "name": "❌ 가입제한 (추방 사유에 포함됩니다)",
+                        "value": "• 욕설, 비매너, 남탓, 성희롱 하는 사람\n• 여미새, 남미새, 여왕벌, 철새\n• 정치질하고 이간질하며 분란조장하는 사람\n• 사람 가려서 게임하는 사람",
+                        "inline": False
                     }
                 ],
                 "footer": {
-                    "text": "DANBAM Official 알림 시스템"
+                    "text": "클랜 합병 & 연합 문의 받습니다"
+                },
+                "image": {
+                    "url": "https://cdn.discordapp.com/attachments/1422956502020522054/1470081769050210531/707-_01.png?ex=69f17d96&is=69f02c16&hm=3012c1fe4083b850427693cddce3b5066748e077f4beeb76c2275c73cf0b64c6&"
+                }
+            },
+            # 두 번째 이미지 객체
+            {
+                "color": 0xF1A60A,
+                "image": {
+                    "url": "https://cdn.discordapp.com/attachments/1422956502020522054/1470081784036196627/707-_02.png?ex=69f17d9a&is=69f02c1a&hm=51f12584cfc789ea7991273fa23b535c2958fa48996a63a810c67efac205c78c&"
+                }
+            },
+            # 세 번째 이미지 객체
+            {
+                "color": 0xF1A60A,
+                "image": {
+                    "url": "https://cdn.discordapp.com/attachments/1422956502020522054/1470081799223902328/707-_03.png?ex=69f17d9d&is=69f02c1d&hm=228f65c88baafb27df6806db9fe3747061ef0d5f3fc7c9f770513cb27e8ca81c&"
                 }
             }
         ],
+        # 3. AutoMod 및 멘션 스팸 필터링 회피 메커니즘
+        "allowed_mentions": {
+            "parse": []
+        }
+    },
         # 3. AutoMod 및 멘션 스팸 필터링 회피 메커니즘
         "allowed_mentions": {
             "parse": [] # 어떠한 멘션(@everyone 등)도 실제 푸시 알림으로 트리거되지 않도록 강제 차단
