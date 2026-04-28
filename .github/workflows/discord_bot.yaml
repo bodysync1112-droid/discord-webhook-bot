@@ -2,14 +2,14 @@ name: 15-Min D2C Promotion Webhook
 
 on:
   schedule:
-    # POSIX 크론 문법: 매 15분마다 트리거 (0, 15, 30, 45분)
     - cron: '*/15 * * * *'
-  # 개발 및 디버깅용 수동 트리거 버튼 활성화
   workflow_dispatch: 
 
 jobs:
   broadcast:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: 1. 리포지토리 체크아웃
         uses: actions/checkout@v4
@@ -26,6 +26,5 @@ jobs:
 
       - name: 4. 홍보 스크립트 실행 (환경 변수 은닉)
         env:
-          # GitHub 셋팅에서 등록한 Secret 값을 런타임에 주입
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python webhook_sender.py
